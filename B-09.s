@@ -1,5 +1,8 @@
-# B.08 Escriba un programa que imprima por consola el valor de un dato (32 bits signado)
-# almacenado en memoria. Complete el programa a partir de la sección text.
+# B.09 Escriba un programa que imprima por consola el valor dado (16 bits signado)
+# almacenado en memoria
+# En este ejercicio tiene que razonar porque el valor que se imprime es negativo si el valor
+# almacenado es 32769. Si en su salida aparece el número 32769… probablemente esté
+# usando LW y no es lo pedido
 #.data es el espacio de memoria para variables, asi como .text es el espacio de memoria para el codigo
 # la rd,symbol = pseudoinstruccion que carga lo que se encuentra dentro de la direccion indicada en symbol en el registro destino rd
 

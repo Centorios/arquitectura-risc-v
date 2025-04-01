@@ -1,26 +1,29 @@
-# B.07 Escriba un programa que dado un número almacenado en x5 (ej: x5=234), el mismo sea
-# dividido por 10, dejando en x7 la cantidad de veces que entra 10 en ese número, y en x8 el
-# resto. NO utilizar la instrucción de división, se puede resolver con un bucle contando cuantas
-# veces se le pueden restar 10 a x5 y que el mismo sea mayor que 10. Almacene el programa en
-# su computadora como “div_x5_por_10.s”
+# B.06 Usando la syscall PrintChar (A7=11), imprima
+# los valores ASCII desde 33 hasta 57
+# B.07 Modifique el programa anterior para que cada elemento se encuentre rodeado entre
+# corchetes [ ] (verifique la tabla ASCII para los valores de los corchetes).
+# 91 es el corchete de apertura
+# 93 es el corchete de cierre
+# uso x9 como registrio auxiliar en vez de operar sobre x10
 
 .text
-    li x5, 20
-    li x6, 10
-    li x7, 0 # Contador de divisiones
-restar:
-    sub x5, x5, x6 # resto al dividendo el divisor
-    addi x7, x7, 1
-    bge x5, x6, restar
+fin:
     
-    blt x5, x0, descarta_ultima_resta
-    bge x5, x0, llena_resto
-descarta_ultima_resta:
-    add x5, x5, x6
-    addi x7, x7, -1
-llena_resto:
-    add x8, x0, x5 # llevo a x8 el resto
-    
-    
+  addi x17,x0 11
+  addi x9,x0 33
+  addi x1,x0 57
+loop:
+    addi x10,x0 91
+    ecall
+    addi x10,x9 0
+    ecall
+    addi x10,x0 93
+    ecall
+    addi x9,x9 1
+    bge x1,x9 loop
+    addi x17,x0 10
+    ecall  
+  
+
     
     

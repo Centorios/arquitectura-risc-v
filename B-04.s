@@ -5,7 +5,7 @@
 .text
 fin:
   addi x17,x0 1 #addi a7,x0 1
-  addi x10,x0 1234 #addi a0,x0 1 
+  addi x10,x0 1234 #addi a0,x0 1234
   ecall
 
 bge x0 x0 fin

@@ -18,6 +18,3 @@ fin:
   ecall
   addi x17,x0 10
   ecall  
-  
-
-#load half carga la parte alta con 0xffff

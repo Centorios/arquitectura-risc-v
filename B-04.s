@@ -1,5 +1,11 @@
-# B.02 Escriba las instrucciones necesarias en Ripes para lograr que el registro x5 tenga el valor hexadecimal 0x12345678
-# B.04 Luego de resolver B.02, almacene en x7 el valor de x5 menos uno
-  lui x5, 0x12345
-  addi x5, x5, 678
-  addi x6, x5, -1
+# B.04 Utilizando la system call ‘PrintInt’ (a7=1) imprima por consola el valor 1234.
+# a7 maneja que sucede con la ecall
+# a0 es el registro que se usa para lo que sea que haga la ecall
+    
+.text
+fin:
+  addi x17,x0 1 #addi a7,x0 1
+  addi x10,x0 1234 #addi a0,x0 1 
+  ecall
+
+bge x0 x0 fin
